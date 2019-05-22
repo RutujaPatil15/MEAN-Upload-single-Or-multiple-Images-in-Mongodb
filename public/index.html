@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>single and multi file upload</title>
+  
+  <script src="js_lib/angular/angular.min.js"></script>
+  <script src="js_lib/ng-file-upload/dist/ng-file-upload.min.js"></script>
+  <script src="app.js"></script>  
+
+</head>
+<body ng-app="myapp" ng-controller="MyCtrl" style="text-align:center;">
+<h1>Upload single/multiple file in Mongodb</h1>
+<div style="margin-top:5%;">
+<div>
+    <h3>Upload Single image</h3>
+    <input id="picture" type="file" name="file"  ngf-select="uploadFiles($file, $invalidFiles)" ngf-max-size="4MB"  accept="image/*"/>
+    <button ng-click="storefile()" ng-disabled="dis">Store file</button>
+</div>
+<br>
+<br>
+<div>
+  
+  <h3> upload Multiple images</h3>  
+  <input id="pictures" type="file" ngf-select="upload($files,invalidfiles)"  name="file"    
+   accept="image/*" ngf-max-size="4MB" ngf-multiple="true" ngf-keep="true" ngf-keep-distinct="true"/>
+  <button ng-click="submitfiles()">store files</button>
+
+</div>
+</div>
+</body>
+</html>
+
